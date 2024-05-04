@@ -16,3 +16,26 @@
 /*****                 ****/
 /***** CONTENT _STYLE  ****/
 /*****                 ****/
+
+.row{
+    max-width: 1000px;
+    margin: auto;
+    background-color: teal;
+}
+
+.col{
+    width: calc(100% / 5);
+    color: white;
+    text-align: center;
+}
+
+.number-box{
+    display: flex;
+}
+
+.timer-box{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
