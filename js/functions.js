@@ -11,7 +11,7 @@ let fourthN = document.getElementById("fourth-number");
 let fifthN = document.getElementById("fifth-number");
 
 function numbersGenerator(){
-    // Generate a sequence of random number between 1 and 5 + innerhtml
+    // GENERA 5 NUMERI CASUALI E LI SALVO IN UN ARRAY + innerhtml
 
     for (let i=1;i<=20;i++){
         randomNumbersList.push(Math.floor(Math.random()*20)+1);
@@ -37,25 +37,39 @@ console.log(randomFiveNumbers);
  fifthN.innerHTML = fifthNumber;
 }
 
+//FUNZIONE CHE SETTA IL TIMER E LO STAMPA IN PAGINA
+function timerOn(){
+    let seconds = 30;
+    let ilMioTimer = setInterval(function() {
+    	if(seconds!=0) {
+    		document.getElementById("timer").innerHTML = "Conto alla rovescia: " + seconds;
+    		seconds--;
+    	} else {
+    		document.getElementById("timer").innerHTML =  "Adesso è il tuo turno!";
+    		clearInterval(ilMioTimer);
+    	}
+    }, 1000);
+}
+
+// FUNZIONE CHE SVUOTA GLI ELEMENTI HTML POPOLATI DALLA PRECEDENTE FUNZIONE NUMBERSGENERATOR
 function cancelHtmlNumber(){
     firstN.innerHTML = "";
     secondN.innerHTML = "";
     thirdN.innerHTML = "";
     fourthN.innerHTML = "";
     fifthN.innerHTML = "";
-
-    userNumberGenerator();
-    compareNumbers();
 }
 
+//FUNZIONE CHE CHIEDE ALL'UTENTE DI INSERIRE DEI NUMERI
 function userNumberGenerator(){
     for(let x=0; x<5; x++){
-        userPick = parseInt(prompt('Please enter a number from 1 to 20'));
+        userPick = parseInt(prompt('Cerca di ricordare i precedenti numeri ed inseriscine qui 5 tra 1 e 20'));
         userNumbers.push(userPick);
     }
     console.log(userNumbers);
 }
 
+//FUNZIONE PER COMPARARE I VALORI INSERITI DALLA CONSOLE E QUELLI DELL'UTENTE
 function compareNumbers(){
     for(let i = 0; i<5; i++){
         if(randomFiveNumbers.includes(userNumbers[i])){
@@ -63,9 +77,12 @@ function compareNumbers(){
             guessedNumber.push(userNumbers[i]);
         }
     }
+    document.getElementById("timer").innerHTML = "Hai indovinato " + guessedCounter + " numeri!.";
     console.log("Hai indovinato " + guessedCounter + " numeri!");
 
-    if(guessedNumber.length != 0)
-    console.log("In particolare hai indovinato: " + guessedNumber)
-    
+    if(guessedNumber.length != 0){
+        document.getElementById("timer").innerHTML += " In particolare hai indovinato: " + guessedNumber
+        console.log("In particolare hai indovinato: " + guessedNumber)
+    }
 }
+

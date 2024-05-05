@@ -20,7 +20,7 @@
 .row{
     max-width: 1000px;
     margin: auto;
-    background-color: teal;
+    background-color: rgb(26, 137, 180);
 }
 
 .col{
@@ -34,7 +34,7 @@
 }
 
 .timer-box{
-    margin-top: 3rem;
+    padding: 3rem;
     display: flex;
     justify-content: center;
     color: white;
