@@ -1,4 +1,3 @@
-let randomNumbersList = [];
 let randomFiveNumbers = [];
 let userNumbers = [];
 let guessedNumber = [];
@@ -13,28 +12,16 @@ let fifthN = document.getElementById("fifth-number");
 function numbersGenerator(){
     // GENERA 5 NUMERI CASUALI E LI SALVO IN UN ARRAY + innerhtml
 
-    for (let i=1;i<=20;i++){
-        randomNumbersList.push(Math.floor(Math.random()*20)+1);
+    for (let i=1;i<=5;i++){
+        randomFiveNumbers.push(Math.floor(Math.random()*100)+1);
     }
+    console.log(randomFiveNumbers);
 
-let firstNumber = randomNumbersList[Math.floor(Math.random()*19)];
-let secondNumber = randomNumbersList[Math.floor(Math.random()*19)];
-let thirdNumber = randomNumbersList[Math.floor(Math.random()*19)];
-let fourthNumber = randomNumbersList[Math.floor(Math.random()*19)];
-let fifthNumber = randomNumbersList[Math.floor(Math.random()*19)];
-
-randomFiveNumbers.push(firstNumber);
-randomFiveNumbers.push(secondNumber);
-randomFiveNumbers.push(thirdNumber);
-randomFiveNumbers.push(fourthNumber);
-randomFiveNumbers.push(fifthNumber);
-console.log(randomFiveNumbers);
-
- firstN.innerHTML = firstNumber;
- secondN.innerHTML = secondNumber;
- thirdN.innerHTML = thirdNumber;
- fourthN.innerHTML = fourthNumber;
- fifthN.innerHTML = fifthNumber;
+ firstN.innerHTML = randomFiveNumbers[0];
+ secondN.innerHTML = randomFiveNumbers[1];
+ thirdN.innerHTML = randomFiveNumbers[2];
+ fourthN.innerHTML = randomFiveNumbers[3];
+ fifthN.innerHTML = randomFiveNumbers[4];
 }
 
 //FUNZIONE CHE SETTA IL TIMER E LO STAMPA IN PAGINA
