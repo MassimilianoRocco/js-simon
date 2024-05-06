@@ -39,26 +39,23 @@ console.log(randomFiveNumbers);
 
 //FUNZIONE CHE SETTA IL TIMER E LO STAMPA IN PAGINA
 function timerOn(){
-    let seconds = 30;
+    let seconds = 5;
     let ilMioTimer = setInterval(function() {
     	if(seconds!=0) {
     		document.getElementById("timer").innerHTML = "Conto alla rovescia: " + seconds;
     		seconds--;
     	} else {
+            firstN.innerHTML = "";
+            secondN.innerHTML = "";
+            thirdN.innerHTML = "";
+            fourthN.innerHTML = "";
+            fifthN.innerHTML = "";
     		document.getElementById("timer").innerHTML =  "Adesso è il tuo turno!";
     		clearInterval(ilMioTimer);
     	}
     }, 1000);
 }
 
-// FUNZIONE CHE SVUOTA GLI ELEMENTI HTML POPOLATI DALLA PRECEDENTE FUNZIONE NUMBERSGENERATOR
-function cancelHtmlNumber(){
-    firstN.innerHTML = "";
-    secondN.innerHTML = "";
-    thirdN.innerHTML = "";
-    fourthN.innerHTML = "";
-    fifthN.innerHTML = "";
-}
 
 //FUNZIONE CHE CHIEDE ALL'UTENTE DI INSERIRE DEI NUMERI
 function userNumberGenerator(){
